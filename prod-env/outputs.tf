@@ -18,6 +18,6 @@ output "The_webserver_Public_ip" {
    value = module.ChildModule.The_webserver_Public_ip
 }
 
-output "The_websrever_Private_ip" {
+output "The_webserver_Private_ip" {
    value = module.ChildModule.The_webserver_Private_ip
 }
