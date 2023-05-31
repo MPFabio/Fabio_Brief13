@@ -1,3 +1,3 @@
-module "ParentdModule" {
+module "ChildModule" {
   source = "../azure-webserver"
 }
