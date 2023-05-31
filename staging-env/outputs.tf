@@ -1,4 +1,3 @@
-  GNU nano 6.0                                                                                outputs.tf                                                                                          
 output "Ressource_group_name" {
   value = module.ChildModule.Ressource_group_name
 }
