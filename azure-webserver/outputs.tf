@@ -14,7 +14,7 @@ output "The_vnet_ID" {
  value = azurerm_virtual_network.webserver-net.id
 }
 
-output "The_websrever_Private_ip" {
+output "The_webserver_Private_ip" {
    value = azurerm_linux_virtual_machine.nginx.private_ip_address
 }
 
