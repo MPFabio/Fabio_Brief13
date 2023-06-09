@@ -15,7 +15,7 @@ pipeline {
                     
                     if (params.name == "Stage-Env" ||  params.name == "Stage-Env"){
                     if (params.sign_check == true) {
-                       sh 'cd /var/lib/jenkins/workspace/Brief13/staging-env'
+                       sh 'cd staging-env'
                     }
                     }
                }                
@@ -28,7 +28,7 @@ pipeline {
                     
                     if (params.name == "Prod-Env" ||  params.name == "Prod-Env"){
                     if (params.sign_check == true)  {
-                        sh 'cd /var/lib/jenkins/workspace/Brief13/prod-env'
+                        sh 'cd prod-env'
                     }
                     }
                 }                
