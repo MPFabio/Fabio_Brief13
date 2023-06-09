@@ -17,7 +17,7 @@ pipeline {
                 script {
                     
                     echo params.name
-                    sh 'cd params.name '
+                    sh 'cd /params.name '
                     sh'  terraform init'
                 }                
             }
