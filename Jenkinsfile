@@ -15,6 +15,7 @@ pipeline {
                     
                     if (params.name == "staging-env" ||  params.name == "staging-env"){
                     if (params.sign_check == true) {
+                       echo params.name
                        sh 'cd staging-env'
                     }
                     }
