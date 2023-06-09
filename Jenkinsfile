@@ -4,7 +4,7 @@ pipeline {
     parameters
     {
         booleanParam(defaultValue: true, description: '', name: 'sign_check')
-        string(name: 'name', defaultValue: "staging-env", description: 'env')
+        string(name: 'name', defaultValue: "", description: 'env')
     }
     
     stages {
