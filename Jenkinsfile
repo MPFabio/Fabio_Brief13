@@ -9,7 +9,7 @@ pipeline {
     
     stages {
         
-        stage ('Stage-Env') {
+       /* stage ('Stage-Env') {
             steps {
                 script {
                     
@@ -35,12 +35,12 @@ pipeline {
             }
         }
         
-       
+       */
         
         stage ('Terraform Init') {
             steps {
                 script {
-                    sh 'terraform init'
+                    sh 'cd prod-env && terraform init'
                 }                
             }
         }
@@ -48,7 +48,7 @@ pipeline {
         stage ('Terraform Plan') {
             steps {
                 script {
-                    sh 'terraform plan'
+                    sh 'cd prod-env && terraform plan'
                 }
             }
         }
@@ -56,7 +56,7 @@ pipeline {
         stage ('Terraform apply') {
             steps {
                 script {
-                    sh 'terraform apply -auto-approve' 
+                    sh 'cd prod-env && terraform apply -auto-approve' 
                 }    
             }
         } 
