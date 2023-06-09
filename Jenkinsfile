@@ -4,22 +4,10 @@ pipeline {
     parameters
     {
         booleanParam(defaultValue: true, description: '', name: 'sign_check')
-        string(name: 'name', defaultValue: "Stage-Env", description: 'env')
+        string(name: 'name', defaultValue: "Prod-Env", description: 'env')
     }
     
     stages {
-        stage ('Prod-Env') {
-            steps {
-                script {
-                    
-                    if (params.name == "Prod-Env" ||  params.name == "Prod-Env"){
-                    if (params.sign_check == true) {
-                        sh 'cd prod-env/'
-                    }
-                    }
-                }                
-            }
-        }
         
         stage ('Stage-Env') {
             steps {
@@ -27,10 +15,23 @@ pipeline {
                     
                     if (params.name == "Stage-Env" ||  params.name == "Stage-Env"){
                     if (params.sign_check == true) {
-                       sh 'cd staging-env/'
+                       sh 'cd /var/lib/jenkins/workspace/Brief13/staging-env'
                     }
                     }
                }                
+            }
+        }
+        
+        stage ('Prod-Env') {
+            steps {
+                script {
+                    
+                    if (params.name == "Prod-Env" ||  params.name == "Prod-Env"){
+                    if (params.sign_check == true)  {
+                        sh 'cd /var/lib/jenkins/workspace/Brief13/prod-env'
+                    }
+                    }
+                }                
             }
         }
         
