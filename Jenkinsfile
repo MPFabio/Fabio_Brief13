@@ -14,7 +14,6 @@ pipeline {
         
         stage ('Terraform Init') {
             steps {
-                params.name = string.DefaultValue
                 echo "${params.name}"
                 script {
                     
