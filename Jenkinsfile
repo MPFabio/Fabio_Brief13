@@ -17,7 +17,7 @@ pipeline {
                 echo "${params.name}"
                 script {
                     
-                    sh 'cd ${params.name} && terraform init'
+                    sh "cd ${params.name} && terraform init"
                 }                
             }
         }
@@ -25,7 +25,7 @@ pipeline {
         stage ('Terraform Plan') {
             steps {
                 script {
-                    sh 'cd params.name && terraform plan'
+                    sh "cd ${params.name} && terraform plan"
                 }
             }
         }
@@ -33,7 +33,7 @@ pipeline {
         stage ('Terraform apply') {
             steps {
                 script {
-                    sh 'cd params.name && terraform apply -auto-approve' 
+                    sh "cd ${params.name} && terraform apply -auto-approve"
                 }    
             }
         } 
