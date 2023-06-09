@@ -1,7 +1,11 @@
 pipeline {
     agent any
   
-    booleanParam(defaultValue: true)
+    parameters
+    {
+    
+        booleanParam(defaultValue: true)
+    }
     
     stages {
         stage ('Prod-Env') {
