@@ -13,7 +13,6 @@ pipeline {
             }
         }
         
-        stages {
         stage ('Staging-Env') {
             steps {
                 script {
