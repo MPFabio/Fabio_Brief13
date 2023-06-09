@@ -3,8 +3,8 @@ pipeline {
   
     parameters
     {
-        booleanParam(defaultValue: true, description: '', name: 'Env')
-        string(name: 'name', defaultValue: "", description: 'env')
+        booleanParam(defaultValue: true, description: '', name: 'Environment')
+        string(name: 'Deploy', defaultValue: "", description: '')
         choice(choices: ['apply', 'destroy'], name: 'Action')
     }
     
