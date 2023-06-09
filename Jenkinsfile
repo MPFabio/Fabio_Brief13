@@ -5,6 +5,7 @@ pipeline {
     {
         booleanParam(defaultValue: true, description: '', name: 'Env')
         string(name: 'name', defaultValue: "", description: 'env')
+        choice(choices: ['apply', 'destroy'], name: 'Action')
     }
     
     stages {
