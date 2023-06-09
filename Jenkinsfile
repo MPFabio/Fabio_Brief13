@@ -33,7 +33,7 @@ pipeline {
         stage ('Terraform apply') {
             steps {
                 script {
-                    sh "cd ${params.Environment} && terraform apply -auto-approve"
+                    sh "cd ${params.Environment} && terraform ${params.Action} -auto-approve"
                 }    
             }
         } 
