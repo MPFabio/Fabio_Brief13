@@ -5,7 +5,7 @@ pipeline {
     {
         booleanParam(defaultValue: true, description: '', name: 'Deploy')
         string(name: 'Environment', defaultValue: "", description: '')
-        
+        choice(choices: ['apply', 'destroy'], name: 'Action')
     }
     
     stages {
@@ -15,9 +15,9 @@ pipeline {
         
         stage ('Terraform Init') {
             steps {
-                echo "${params.name}"
+                echo "${params.Environment}"
                 script {
-                    sh "cd ${params.name} && terraform init"
+                    sh "cd ${params.Environment} && terraform init"
                 }                
             }
         }
@@ -25,7 +25,7 @@ pipeline {
         stage ('Terraform Plan') {
             steps {
                 script {
-                    sh "cd ${params.name} && terraform plan"
+                    sh "cd ${params.Environment} && terraform plan"
                 }
             }
         }
@@ -33,7 +33,7 @@ pipeline {
         stage ('Terraform apply') {
             steps {
                 script {
-                    sh "cd ${params.name} && terraform apply -auto-approve"
+                    sh "cd ${params.Environment} && terraform apply -auto-approve"
                 }    
             }
         } 
