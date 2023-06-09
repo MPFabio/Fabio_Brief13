@@ -3,8 +3,8 @@ pipeline {
   
     parameters
     {
-    
-        booleanParam(defaultValue: true)
+        booleanParam(defaultValue: true, description: '', name: 'sign_check')
+        string(name: 'deploy', defaultValue: "env", description: '')
     }
     
     stages {
