@@ -4,7 +4,7 @@ pipeline {
     parameters
     {
         booleanParam(defaultValue: true, description: '', name: 'sign_check')
-        string(name: 'name', defaultValue: "Stage-Env", description: 'env')
+        string(name: 'name', defaultValue: "staging-env", description: 'env')
     }
     
     stages {
@@ -13,7 +13,7 @@ pipeline {
             steps {
                 script {
                     
-                    if (params.name == "Stage-Env" ||  params.name == "Stage-Env"){
+                    if (params.name == "staging-env" ||  params.name == "staging-env"){
                     if (params.sign_check == true) {
                        sh 'cd staging-env'
                     }
@@ -26,7 +26,7 @@ pipeline {
             steps {
                 script {
                     
-                    if (params.name == "Prod-Env" ||  params.name == "Prod-Env"){
+                    if (params.name == "prod-env" ||  params.name == "prod-env"){
                     if (params.sign_check == true)  {
                         sh 'cd prod-env'
                     }
