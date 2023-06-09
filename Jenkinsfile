@@ -15,8 +15,8 @@ pipeline {
         stage ('Terraform Init') {
             steps {
                 script {
-                     echo params.name
-                    sh 'cd params.name && terraform init'
+                     var == params.name
+                    sh 'cd $var && terraform init'
                 }                
             }
         }
