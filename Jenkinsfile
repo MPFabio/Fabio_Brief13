@@ -9,33 +9,7 @@ pipeline {
     
     stages {
         
-       stage ('Stage-Env') {
-            steps {
-                script {
-                    
-                    if (params.name == "staging-env" ||  params.name == "staging-env"){
-                    if (params.sign_check == true) {
-                      
-                       sh 'cd staging-env'
-                    }
-                    }
-               }                
-            }
-        }
-        
-        stage ('Prod-Env') {
-            steps {
-                script {
-                    
-                    if (params.name == "prod-env" ||  params.name == "prod-env"){
-                    if (params.sign_check == true)  {
-                        sh 'cd prod-env'
-                    }
-                    }
-                }                
-            }
-        }
-        
+  
      
         
         stage ('Terraform Init') {
