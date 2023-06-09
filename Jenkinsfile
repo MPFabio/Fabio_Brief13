@@ -22,7 +22,7 @@ pipeline {
             steps {
                 script {
                    if (params.name == "Stag-Env" ||  params.name == "def-two"){
-                   if (params.sign_check == true) {
+                   if (params.sign_check == false) {
                        sh 'cd staging-env/'
                }                
             }
