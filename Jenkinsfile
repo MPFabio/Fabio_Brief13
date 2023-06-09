@@ -1,23 +1,27 @@
 pipeline {
     agent any
   
+    booleanParam(defaultValue: true)
+    
     stages {
         stage ('Prod-Env') {
             steps {
                 script {
-                    sh 'cd prod-env'
+                    if (true)
+                        sh 'cd prod-env'
                 }                
             }
         }
         
-        #stages {
-        #stage ('Staging-Env') {
-            #steps {
-                #script {
-                    #sh 'cd staging-env'
-                #}                
-            #}
-        #}
+        stages {
+        stage ('Staging-Env') {
+            steps {
+                script {
+                   if (false)
+                       sh 'cd staging-env'
+               }                
+            }
+        }
         
         stage ('Terraform Init') {
             steps {
