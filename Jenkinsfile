@@ -11,7 +11,7 @@ pipeline {
         stage ('Prod-Env') {
             steps {
                 script {
-                    if (params.name == "Prod-Env" ||  params.name == "def-one"){
+                    if (params.name == "Prod-Env" ||  params.name == "Prod-Env"){
                     if (params.sign_check == true) {
                         sh 'cd prod-env/'
                     }
@@ -23,7 +23,7 @@ pipeline {
         stage ('Stag-Env') {
             steps {
                 script {
-                    if (params.name == "Stag-Env" ||  params.name == "def-two"){
+                    if (params.name == "Stag-Env" ||  params.name == "Stage-Env"){
                     if (params.sign_check == true) {
                        sh 'cd staging-env/'
                     }
